@@ -58,7 +58,7 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-
+  // Function that plays the sound based on the keyEvent
   function playSound(e) {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"`);
@@ -71,15 +71,13 @@
 
 
   const keys = document.querySelectorAll('.key');
+  // Undo transition
   function removeTransition(e) {
     if(e.propertyName !== 'transform') return;
     this.classList.remove('playing');
   }
 
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-
 </script>
-
-
 </body>
 </html>
